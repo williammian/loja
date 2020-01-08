@@ -1,0 +1,18 @@
+<p>Edição de Produto</p>
+
+<form (submit)="salvar()">
+  <input name="id" type="text" [ngModel]="produto.id" (ngModelChange)="produto.id=$event"><br>
+
+  <!--
+  <input [style.backgroundColor]="produto.nome.length > 15 ? '#CC0000' : '#FFFFFF'" required name="nome" type="text" [(ngModel)]="produto.nome"><br>
+    -->
+  <input upperCase [class.alerta]="produto.nome.length > 15" required name="nome" type="text" [(ngModel)]="produto.nome"><br>
+
+  <div [style.display]="produto.nome.length > 15 ? 'block' : 'none'">Evite nomes com mais de 15 caracteres.</div>
+
+  <input type="submit" value="Salvar">
+</form>
+
+Div: <div [textContent]="debug"></div>
+{{debug}}
+
